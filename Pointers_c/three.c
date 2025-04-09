@@ -16,5 +16,12 @@ int main() {
         printf("(%u, %d),\t", (p+i), *(p+i));
     }
 
+    if (p != NULL) {
+        free(p);
+        p = NULL;
+    }
+
+    printf("%u, %d", p, *p);
+
     return 0;
 }
