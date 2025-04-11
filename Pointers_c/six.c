@@ -66,6 +66,15 @@ int main() {
         free(charArray);
         charArray = NULL;
     }
+
+    float* floatArray = (float *)getArray('f', 10);
+    if (floatArray != NULL) {
+        printf("Random float array: ");
+        for (int i = 0; i < 10; i++) printf("%.2f, ", floatArray[i]);
+        printf("\b\b \n");
+        free(floatArray);
+        floatArray = NULL;
+    }
     
     return 0;
 }
