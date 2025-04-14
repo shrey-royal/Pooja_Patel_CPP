@@ -1,36 +1,40 @@
 #include <iostream>
 using namespace std;
 
-class Vehicle {
+class Employee {
 protected:
-    string brand;
-    int speed;
+    string name;
+    int id;
+
+    void displayDetails() {
+        cout << "Name: " << name << ", ID: " << id << endl;
+    }
 
 public:
-    Vehicle(string brand, int speed) : brand(brand), speed(speed) {}
-
-    void displayVehicle() {
-        cout << "Brand: " << brand << endl;
-        cout << "Speed: " << speed << endl;
+    Employee(string empName, int empId) {
+        name = empName;
+        id = empId;
     }
 };
 
-class Car : private Vehicle {
-private:
-    string fuelType;
-    int doors;
+class Developer : public Employee {
 public:
-    Car(string brand, int speed, string fuelType, int doors) : Vehicle(brand, speed), fuelType(fuelType), doors(doors) {}
-
-    void getCarDetails() {
-        displayVehicle();
-        cout << "Fuel Type: " << fuelType << endl;
-        cout << "Doors: " << doors << endl;
+    Developer(string empName, int empId, string lang) : Employee(empName, empId) {
+        programmingLangauge = lang;
     }
+
+    void showDeveloperDetails() {
+        displayDetails();
+        cout << "Programming Language: " << programmingLangauge << endl;
+    }
+
+private:
+    string programmingLangauge;
 };
 
 int main() {
-    Car c("Honda", 100, "Petrol", 4);
+    Developer dev("Alice Johnson", 1001, "C++");
+    dev.showDeveloperDetails();
 
-    c.getCarDetails();
+    return 0;
 }
