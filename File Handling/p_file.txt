@@ -1,0 +1,5 @@
+this is a sample text file,
+created automatically by a cpp program.
+
+this is another line that is appended after the existing data of P-file
+this is the last line
