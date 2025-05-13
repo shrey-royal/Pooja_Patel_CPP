@@ -7,11 +7,9 @@ private:
     ifstream fin;
     ofstream fout;
     string file_name;
-    bool isFileOpened;
 
 public:
     TextReadWrite(string file_name) {
-        isFileOpened = false;
         if (file_name != "" || file_name.length() > 0) {
             this->file_name = file_name;
             this->file_name.append(".txt");
